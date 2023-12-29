@@ -1,0 +1,40 @@
+<h1>{{name}}</h1>
+
+<dl>
+  <dt>Nombre:</dt>
+  <dd>{{name}}</dd>
+
+  <dt>Edad:</dt>
+  <dd>{{age}}</dd>
+
+  <dt>Metodo:</dt>
+  <dd>{{getheroDescription()}}</dd>
+
+  <dt>Capitalizado:</dt>
+  <dd>{{capitalizeName}}</dd>
+</dl>
+
+<div *ngIf="name === 'ironman'">
+  <input #newName placeholder="Nuevo Nombre" class="mx-2">
+  <button
+    (click)="changeHero(newName.value)"
+    class="btn btn-primary mx-2">
+    Cambiar Nombre
+  </button>
+</div>
+
+<hr>
+<div *ngIf="age===45">
+  <input type="number" #newAge placeholder="Nueva Edad" class="mx-2" >
+  <button
+    (click)="changeAge(newAge.value)"
+    class="btn btn-primary">
+    Cambiar Edad
+  </button>
+</div>
+
+
+<hr>
+<button (click)="resetForm()" class="btn btn-primary">
+  Reset
+</button>
